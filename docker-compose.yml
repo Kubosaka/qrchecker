@@ -1,0 +1,25 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: qr-api
+    ports:
+      - '3030:3000'
+    volumes:
+      - .:/app
+      - go_path:/go
+  db:
+    image: mysql:8.0.21
+    container_name: qr-db
+    ports:
+      - '3306:3306'
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_USER: 'webuser'
+      MYSQL_PASSWORD: 'webpass'
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_DATABASE: 'sample_db'
+volumes:
+  go_path:
