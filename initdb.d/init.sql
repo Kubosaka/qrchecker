@@ -5,13 +5,14 @@ use sample_db;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-  id           INT(10) unsigned not null auto_increment,
-  name     VARCHAR(255) not null,
-  email varchar(255) not null,
-  passward varchar(255) not null,
-  primary key (id)
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255),
+  `email` VARCHAR(255),
+  `password` VARCHAR(255),
+  PRIMARY KEY (`id`)
 );
 
-INSERT INTO users (id, name, email,passward) VALUES (1, "Yamada", "yamada@example.com","aaaaaa");
-INSERT INTO users (id, name, email,passward) VALUES (2, "Kubosaka", "kubosaka@example.com","bbbbbb");
-INSERT INTO users (id, name, email,passward) VALUES (3, "Kubosaka2", "kubosaka2@example.com","ccccccc");
+INSERT INTO users (id, name, email, password) VALUES (1, "Yamada", "yamada@example.com", "aaaaaaa");
+INSERT INTO users (id, name, email, password) VALUES (2, "Yamada2", "yamada2@example.com", "aaaaaaa");
+INSERT INTO users (id, name, email, password) VALUES (3, "Yamada3", "yamada3@example.com", "bbbbbbb");
+
