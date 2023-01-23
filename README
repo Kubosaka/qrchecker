@@ -6,4 +6,4 @@ qr-db→qr-apiにしないとechoするjsonデータが空になってしまう�
  docker compose up db -d 
 
 //次に残りのコンテナを起動
-docker compose up 
+docker compose up app  

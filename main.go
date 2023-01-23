@@ -1,9 +1,8 @@
 package main
 
 import (
-	"qrchecker1/database"
-
 	"net/http"
+	"qrchecker1/database"
 
 	"github.com/labstack/echo/v4"
 )
