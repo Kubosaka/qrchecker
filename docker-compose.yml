@@ -10,7 +10,7 @@ services:
       - .:/app
     tty: true # コンテナの永続化
     depends_on:
-      - db
+      - "db"
     command: "./start.sh"
   db:
     image: mysql:8.0.21

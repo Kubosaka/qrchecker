@@ -1,0 +1,9 @@
+docker コマンド
+起動順序
+qr-db→qr-apiにしないとechoするjsonデータが空になってしまう。
+したがって
+//まずdbコンテナを起動
+ docker compose up db -d 
+
+//次に残りのコンテナを起動
+docker compose up 
