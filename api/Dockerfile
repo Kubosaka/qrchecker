@@ -2,7 +2,6 @@ FROM golang:1.19.0-buster
 
 # アップデートとgitのインストール
 #RUN apk update && apk add git
-#RUN apt install golang-go
 
 # コンテナの作業ディレクトリにローカルのファイルをコピー
 WORKDIR /app

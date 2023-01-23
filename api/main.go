@@ -1,8 +1,8 @@
 package main
 
 import (
+	"api/drivers"
 	"net/http"
-	"qrchecker1/database"
 
 	"github.com/labstack/echo/v4"
 )
@@ -16,7 +16,7 @@ type User struct {
 
 func getUsers(c echo.Context) error {
 	users := []User{}
-	database.DB.Find(&users)
+	drivers.DB.Find(&users)
 	return c.JSON(http.StatusOK, users)
 }
 
@@ -25,14 +25,14 @@ func getUser(c echo.Context) error {
 	if err := c.Bind(&user); err != nil {
 		return err
 	}
-	database.DB.Take(&user)
+	drivers.DB.Take(&user)
 	return c.JSON(http.StatusOK, user)
 }
 
 func main() {
 	e := echo.New()
-	database.Connect()
-	sqlDB, _ := database.DB.DB()
+	drivers.Connect()
+	sqlDB, _ := drivers.DB.DB()
 	defer sqlDB.Close()
 
 	e.GET("/users", getUsers)
