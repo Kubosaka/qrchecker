@@ -14,3 +14,4 @@ CREATE TABLE users (
 
 INSERT INTO users (id, name, mailadress,passward) VALUES (1, "Yamada", "yamada@example.com","aaaaaa");
 INSERT INTO users (id, name, mailadress,passward) VALUES (2, "Kubosaka", "kubosaka@example.com","bbbbbb");
+INSERT INTO users (id, name, mailadress,passward) VALUES (3, "Kubosaka2", "kubosaka2@example.com","ccccccc");
