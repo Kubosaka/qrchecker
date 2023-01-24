@@ -6,7 +6,8 @@ qr-db→qr-apiにしないとechoするjsonデータが空になってしまう�
  docker compose up db -d 
 
 //次に残りのコンテナを起動
-docker compose up api 
+docker compose up api -d
+docker compose up view
 
 main.goのimportエラーはvscodeのパス関係の不具合であり、問題はない.
 
