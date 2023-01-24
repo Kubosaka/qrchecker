@@ -1,5 +1,20 @@
 version: '3'
 services:
+  db:
+    image: mysql:8.0.21
+    container_name: qr-db
+    ports:
+      - '3306:3306'
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./mysql/db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_USER: 'webuser'
+      MYSQL_PASSWORD: 'webpass'
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_DATABASE: 'sample_db'
+    platform: linux/x86_64
+    
   view:
     build: ./view
     container_name: qr-view
@@ -24,19 +39,5 @@ services:
       - "db"
     command: ["./start.sh"]
 
-  db:
-    image: mysql:8.0.21
-    container_name: qr-db
-    ports:
-      - '3306:3306'
-    command: --default-authentication-plugin=mysql_native_password
-    volumes:
-      - ./mysql/db:/docker-entrypoint-initdb.d
-    environment:
-      MYSQL_USER: 'webuser'
-      MYSQL_PASSWORD: 'webpass'
-      MYSQL_ROOT_PASSWORD: 'pass'
-      MYSQL_DATABASE: 'sample_db'
-    platform: linux/x86_64
 volumes:
   go_path:
