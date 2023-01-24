@@ -1,9 +1,21 @@
-docker コマンド
+注意事項
+docker コマンド 
 起動順序
 qr-db→qr-apiにしないとechoするjsonデータが空になってしまう。
-したがって
 //まずdbコンテナを起動
  docker compose up db -d 
 
 //次に残りのコンテナを起動
-docker compose up app  
+docker compose up api 
+
+main.goのimportエラーはvscodeのパス関係の不具合であり、問題はない.
+
+
+使用ポート番号
+
+db
+コンテナ: 3306
+ローカル: 3306
+app
+コンテナ: 8080
+ローカル: 8080
