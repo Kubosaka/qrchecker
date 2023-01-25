@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
        <meta charset="UTF-8" />
-       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
        <title>Node.js HTML表示</title>
    </head>
     <body>
-        <p>Node.jsでHTMLを表示するよ</p>
+        <h1>HELLO</h1>
     </body>
+    <script>
+        //fetch() は Promise を返す（返り値を変数に代入する場合）
+        const promise = fetch('http://localhost:8080/users');
+        
+        //fetch() のレスポンス（リクエストの結果）を then() メソッドで処理
+        promise.then((response) => {
+        return response.json();
+        })
+        .then((data) => {
+        console.log(data);
+        });
+    </script>
 </html>

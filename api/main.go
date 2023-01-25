@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 type User struct {
@@ -30,13 +31,24 @@ func getUser(c echo.Context) error {
 }
 
 func main() {
+	//echoのインスタンス
 	e := echo.New()
+
+	// Middleware
+	e.Use(middleware.Recover())
+
+	//db接続
 	drivers.Connect()
 	sqlDB, _ := drivers.DB.DB()
 	defer sqlDB.Close()
 
+	// CORS対策
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"http://localhost:1324", "127.0.0.1:1324", "http://localhost:1323"}, // ドメイン
+		AllowMethods: []string{http.MethodGet, http.MethodPost, http.MethodPut, http.MethodDelete},
+	}))
+
 	e.GET("/users", getUsers)
 	e.GET("/users/:id", getUser)
-
 	e.Logger.Fatal(e.Start(":8080"))
 }

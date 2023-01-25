@@ -11,3 +11,7 @@ run-api:
 
 down:
 	docker compose down
+
+vstop:
+	docker stop qr-view
+
