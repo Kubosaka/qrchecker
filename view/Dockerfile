@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 #ポート解放
-EXPOSE 1324
+EXPOSE 8000
 
 #index.js 実行
 CMD [ "node", "index.js" ]

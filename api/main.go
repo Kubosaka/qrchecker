@@ -1,8 +1,9 @@
 package main
 
 import (
-	"api/drivers"
 	"net/http"
+
+	"github.com/Kubosaka/qrchecker/api/drivers"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -44,11 +45,11 @@ func main() {
 
 	// CORS対策
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:1324", "127.0.0.1:1324", "http://localhost:1323"}, // ドメイン
+		AllowOrigins: []string{"http://localhost:8000", "127.0.0.1:8000", "http://localhost:1323"}, // ドメイン
 		AllowMethods: []string{http.MethodGet, http.MethodPost, http.MethodPut, http.MethodDelete},
 	}))
 
 	e.GET("/users", getUsers)
 	e.GET("/users/:id", getUser)
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":1323"))
 }
