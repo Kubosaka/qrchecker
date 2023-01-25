@@ -1,7 +1,7 @@
 run:
 	docker compose up db -d
-	docker compose up api -d
-	docker compose up view -d
+	sleep 10
+	docker compose up
 
 run-api:
 	docker compose up -d db

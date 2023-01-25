@@ -15,8 +15,5 @@ RUN npm install
 # アプリケーションのソースをバンドルする
 COPY . .
 
-#ポート解放
-EXPOSE 8000
-
 #index.js 実行
 CMD [ "node", "index.js" ]
