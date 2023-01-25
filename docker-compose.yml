@@ -5,38 +5,40 @@ services:
     container_name: qr-db
     ports:
       - '3306:3306'
-    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - ./mysql/db:/docker-entrypoint-initdb.d
+      - ./mysql/conf:/etc/mysql/conf.d # 設定ファイル
+      - ./mysql/data:/var/lib/mysql
     environment:
       MYSQL_USER: 'webuser'
       MYSQL_PASSWORD: 'webpass'
       MYSQL_ROOT_PASSWORD: 'pass'
       MYSQL_DATABASE: 'sample_db'
-    platform: linux/x86_64
+    # platform: linux/x86_64
+    restart: always
     
   view:
     build: ./view
     container_name: qr-view
     volumes:
       - ./view:/app
-    #command: ["node", "index.js"]
+    command: ["node", "index.js"]
     ports:
-      - "1324:1324"
+      - "8000:8000"
     stdin_open: true
     tty: true
 
   api:
-    image: golang:1.19.0-buster
+    image: golang:1.19
     build: ./api
     container_name: qr-api
     ports:
-      - '8080:8080'
+      - '1323:1323'
     volumes:
       - ./api:/app
     tty: true # コンテナの永続化
     depends_on:
-      - "db"
+              - db
     command: ["./start.sh"]
 
 volumes:
