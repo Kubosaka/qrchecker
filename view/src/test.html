@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+       <meta charset="UTF-8" />
+       <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+       <title>Node.js HTML表示</title>
+   </head>
+    <body>
+        <h1>HELLO</h1>
+        <table id="user-list" border="1">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+            </tr>
+        </table>
+    </body>
+    <script>
+        //fetch() は Promise を返す（返り値を変数に代入する場合）
+        const promise = fetch('http://localhost:1323/users');
+        
+        //fetch() のレスポンス（リクエストの結果）を then() メソッドで処理
+        promise.then((response) => {
+        return response.json();
+        })
+        .then(function (json) {
+            for (var i = 0; i < json.length; i++) {
+                    var name = json[i].name;
+                    var email = json[i].email;
+                    var passward = json[i].password;
+            
+                    //表形式でデータを表示する
+                    var row = document.getElementById('user-list').insertRow();
+                    row.insertCell().textContent = i + 1;
+                    row.insertCell().textContent = name;
+                    row.insertCell().textContent = email;
+                    row.insertCell().textContent = passward;
+            }
+        });
+    </script>
+</html>
