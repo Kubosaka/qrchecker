@@ -1,1 +1,3 @@
-mysql/*
+mysql/conf
+mysql/data
+view/src/package-lock.json

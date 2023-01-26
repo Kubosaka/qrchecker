@@ -1,43 +1,32 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
     <head>
-       <meta charset="UTF-8" />
-       <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-       <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-       <title>Node.js HTML表示</title>
-   </head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="content-type" content="text/html charset=UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" type="text/css" href="./css/index.css">
+		 <title>Node.js HTML表示</title>
+    </head>
     <body>
-        <h1>HELLO</h1>
-        <table id="user-list" border="1">
-            <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>email</th>
-                <th>password</th>
-            </tr>
-        </table>
+        <header class="aaa">ヘッダー</header>
+		<article>
+			<div class="seitoLogin">
+				<h1>生徒用</h1>
+				<h2>ログインID</h2>
+				<h2>パスワード</h2>
+				<a href="seito.html">ログイン</a>
+			</div>
+			<div class="senseiLogin">
+				<h1>生徒用</h1>
+				<h2>ログインID</h2>
+				<h2>パスワード</h2>	
+				<a href="sensei.html">ログイン</a>			
+			</div>
+		</article>
+		<fotter class="bbb">フッター</fotter>
+
+        <!-- <script src="../../common/jquery-3.4.1.min.js"></script> -->
+        <script src="./index.js"></script>
     </body>
-    <script>
-        //fetch() は Promise を返す（返り値を変数に代入する場合）
-        const promise = fetch('http://localhost:1323/users');
-        
-        //fetch() のレスポンス（リクエストの結果）を then() メソッドで処理
-        promise.then((response) => {
-        return response.json();
-        })
-        .then(function (json) {
-            for (var i = 0; i < json.length; i++) {
-                    var name = json[i].name;
-                    var email = json[i].email;
-                    var passward = json[i].password;
-            
-                    //表形式でデータを表示する
-                    var row = document.getElementById('user-list').insertRow();
-                    row.insertCell().textContent = i + 1;
-                    row.insertCell().textContent = name;
-                    row.insertCell().textContent = email;
-                    row.insertCell().textContent = passward;
-            }
-        });
-    </script>
 </html>
