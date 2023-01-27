@@ -6,9 +6,9 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - ./mysql/db:/docker-entrypoint-initdb.d
-      - ./mysql/conf:/etc/mysql/conf.d # 設定ファイル
-      - ./mysql/data:/var/lib/mysql
+       - ./mysql/db:/docker-entrypoint-initdb.d
+       - ./mysql/conf:/etc/mysql/conf.d # 設定ファイル
+       - ./mysql/data:/var/lib/mysql
     environment:
       MYSQL_USER: 'webuser'
       MYSQL_PASSWORD: 'webpass'
