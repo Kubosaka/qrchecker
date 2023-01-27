@@ -8,9 +8,12 @@ const otherPage2 = fs.readFileSync('./sensei.html', 'UTF-8');
 const loginPage = fs.readFileSync('./login.html', 'UTF-8');
 const testPage = fs.readFileSync('./test.html', 'UTF-8');
 const styleCss = fs.readFileSync('./index.css', 'UTF-8');
+const tableCss = fs.readFileSync('./table.css', 'UTF-8');
 const scriptJs = fs.readFileSync('./js/test.js', 'UTF-8');
 const login = fs.readFileSync('./js/login.js', 'UTF-8');
 const home = fs.readFileSync('./home.html', 'UTF-8');
+const test1 = fs.readFileSync('./test1.html', 'UTF-8');
+const attend = fs.readFileSync('./attend.html', 'UTF-8');
 
 const hostname = '0.0.0.0'; //ローカル なら "127.0.0.1"
 const port = 8000;
@@ -30,6 +33,18 @@ function RouteSetting(req, res) {
       res.write(indexPage);
       res.end();
       break;
+    
+    case '/test1':
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.write(test1);
+      res.end();
+      break;  
+    
+    case '/attend':
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.write(attend);
+      res.end();
+      break;  
 
     case '/login':
       res.writeHead(200, {'Content-Type': 'text/html'});
@@ -66,6 +81,12 @@ function RouteSetting(req, res) {
    	 	res.write(styleCss);
     	res.end();
     	break;
+    
+      case '/table.css':
+        res.writeHead(200, {'Content-Type': 'text/css'});
+          res.write(tableCss);
+        res.end();
+        break;
 
     case '/js/test.js':
     	res.writeHead(200, {'Content-Type': 'text/plain'});

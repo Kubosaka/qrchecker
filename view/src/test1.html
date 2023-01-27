@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="content-type" content="text/html charset=UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" type="text/css" href="./css/index.css">
+		 <title>Node.js HTML表示</title>
+    </head>
+    <body>
+        <header>ホーム</header>
+        <button onclick="put()">更新</button>
+    </body>
+    <script>
+    async function put() {
+        const myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
+        myHeaders.append('Access-Control-Allow-Origin', 'http://localhost:1323');
+
+        const parameter = {
+            method: 'PUT',
+            headers: myHeaders,
+        }
+
+        const result = await fetch('http://localhost:1323/attendances/12989393/Computer/22330191/AkiraIyoda/third', parameter).then((response) => {
+            return response.json();
+        });
+
+        console.log(result);
+    }
+    </script>
+</html>
