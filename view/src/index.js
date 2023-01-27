@@ -28,9 +28,9 @@ function RouteSetting(req, res) {
   const url_parts = url.parse(req.url);
   switch (url_parts.pathname) {
     case '/':
-    case '/index.html':
+    case '/login':
       res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(indexPage);
+      res.write(loginPage);
       res.end();
       break;
     
@@ -46,9 +46,9 @@ function RouteSetting(req, res) {
       res.end();
       break;  
 
-    case '/login':
+    case '/index.html':
       res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(loginPage);
+      res.write(indexPage);
       res.end();
       break;
     
@@ -76,7 +76,7 @@ function RouteSetting(req, res) {
       res.end();
       break;
 
-    case '/css/index.css':
+    case '/index.css':
     	res.writeHead(200, {'Content-Type': 'text/css'});
    	 	res.write(styleCss);
     	res.end();
@@ -94,11 +94,35 @@ function RouteSetting(req, res) {
     	res.end();
     	break;
 
-      case '/js/login.js':
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.write(login);
-        res.end();
-        break;
+    case '/js/login.js':
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.write(login);
+      res.end();
+      break;
+
+    case '/photo/logo.png':  //　←　アドレスは任意。本当はuuidとか使うのがいいのかもしれませんが。
+      res.writeHead(200, {
+      'Content-Type': `image/png; charset=utf-8`  //　← ここがキモ！
+      });
+      var image = fs.readFileSync("./photo/logo.png", "binary"); // ← ファイルpathはその環境に合わせてください
+      res.end(image, "binary");
+      break;
+    
+    case '/photo/back.png':  //　←　アドレスは任意。本当はuuidとか使うのがいいのかもしれませんが。
+      res.writeHead(200, {
+      'Content-Type': `image/png; charset=utf-8`  //　← ここがキモ！
+      });
+      var image = fs.readFileSync("./photo/back.png", "binary"); // ← ファイルpathはその環境に合わせてください
+      res.end(image, "binary");
+      break;
+    
+    case '/photo/home.png':  //　←　アドレスは任意。本当はuuidとか使うのがいいのかもしれませんが。
+      res.writeHead(200, {
+      'Content-Type': `image/png; charset=utf-8`  //　← ここがキモ！
+      });
+      var image = fs.readFileSync("./photo/home.png", "binary"); // ← ファイルpathはその環境に合わせてください
+      res.end(image, "binary");
+      break;
 
     default:
       res.writeHead(200, {'Content-Type': 'text/plain'});

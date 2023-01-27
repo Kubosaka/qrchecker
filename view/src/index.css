@@ -23,7 +23,7 @@ body{
 	top: 20px;
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-image: url(.//photo/Q-Join\ ロゴ\ １.png);
+	background-image: url(./photo/logo.png);
 }
 
 .modoru {
@@ -33,7 +33,7 @@ body{
 	left: 25px;
 	top: 20px;
 	background-size: contain;
-	background-image: url(./photo/戻るボタン.png);
+	background-image: url(./photo/back.png);
 	
 }
 .home {
@@ -43,7 +43,7 @@ body{
 	right: 25px;
 	top: 20px;
 	background-size: contain;
-	background-image: url(./photo/ホームボタン.png);
+	background-image: url(./photo/home.png);
 	
 }
 .footer {
