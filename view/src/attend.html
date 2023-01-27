@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+       <meta charset="UTF-8" />
+       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <link rel="stylesheet" type="text/css" href="./table.css">
+       <title>Node.js HTML表示</title>
+   </head>
+    <body>
+        <h1>出席状況</h1>
+        <div class="scroll-box">
+        <table id="at-list-hedder" border="1" align="left">
+            <tr>
+                <td>講義名</td>
+                <td>第1回</td>
+                <td>第2回</td>
+                <td>第3回</td>
+                <td>第4回</td>
+                <td>第5回</td>
+                <td>第6回</td>
+                <td>第7回</td>
+                <td>第8回</td>
+                <td>第9回</td>
+                <td>第10回</td>
+                <td>第11回</td>
+                <td>第12回</td>
+                <td>第13回</td>
+                <td>第14回</td>
+                <td>第15回</td>
+              </tr>
+        </table>
+        </div>
+    </body>
+    <script>
+        //fetch() は Promise を返す（返り値を変数に代入する場合）
+        const promise = fetch('http://localhost:1323/attendances');
+        
+        //fetch() のレスポンス（リクエストの結果）を then() メソッドで処理
+        promise.then((response) => {
+        return response.json();
+        })
+        .then(function (json) {
+            for (var i = 0; i < json.length; i++) {
+                    var lecture = json[i].lecture_name;
+                    var first = json[i].first;
+                    var second = json[i].second;
+                    var third = json[i].third;
+                    var fourth = json[i].fourth;
+                    var fifth = json[i].fifth;
+                    var sixth = json[i].sixth;
+                    var seventh = json[i].seventh;
+                    var eighth = json[i].eighth;
+                    var ninth = json[i].ninth;
+                    var tenth = json[i].tenth;
+                    var eleventh = json[i].eleventh;
+                    var twelfth = json[i].twelfth;
+                    var thirteenth = json[i].thirteenth;
+                    var fourteenth = json[i].fourteenth;
+                    var fifteenth = json[i].fifteenth;
+                    //表形式でデータを表示する
+                    var row = document.getElementById('at-list-hedder').insertRow();
+                    row.insertCell().textContent = lName(lecture);
+                    row.insertCell().textContent = attend(first);
+                    row.insertCell().textContent = attend(second);
+                    row.insertCell().textContent = attend(third);
+                    row.insertCell().textContent = attend(fourth);
+                    row.insertCell().textContent = attend(fifth);
+                    row.insertCell().textContent = attend(sixth);
+                    row.insertCell().textContent = attend(seventh);
+                    row.insertCell().textContent = attend(eighth);
+                    row.insertCell().textContent = attend(ninth);
+                    row.insertCell().textContent = attend(tenth);
+                    row.insertCell().textContent = attend(eleventh);
+                    row.insertCell().textContent = attend(twelfth);
+                    row.insertCell().textContent = attend(thirteenth);
+                    row.insertCell().textContent = attend(fourteenth);
+                    row.insertCell().textContent = attend(fifteenth);
+            }
+        });
+        function attend(a){
+            if(a==true){
+                return "○";
+            }else{
+                return " ";
+            }
+        }
+        function lName(a){
+            if(a=="Computer"){
+                return "PC";
+            }else if(a=="Engilsh"){
+                return "英語";
+            }
+        }
+    </script>
+</html>
