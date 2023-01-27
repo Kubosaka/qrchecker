@@ -1,0 +1,56 @@
+.body {
+	color: rgb(208, 136, 49);
+	  background-color: aqua;
+	  font-size: large;
+  }
+  
+  .senseiLogin {
+	  color: black;
+  }
+  .aaa {
+	  background-color: black;
+  }
+  
+  .bbb {
+	  background-color: black;
+  }
+  
+  
+  /* seito,sensei */
+  .msr_table01 {
+	border-collapse: collapse;
+	border-left: 1px solid #AAAAAA;
+	border-top: 1px solid #AAAAAA;
+	line-height: 1.5;
+	text-align: left;
+	width: 100%;
+	  overflow: auto;
+	  white-space: nowrap;
+  }
+  .msr_table01 th {
+	background-color: #E3E7E9;
+	border-bottom: 1px solid #AAAAAA;
+	border-right: 1px solid #AAAAAA;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px;
+	text-align: center;
+	vertical-align : middle;
+  }
+  .msr_table01 thead th {
+	background-color: #ABB7BC;
+	border-right: 1px solid #FFFFFF;
+	color: #FFFFFF;
+  }
+  .msr_table01 thead th:last-child {
+	border-right: 1px solid #AAAAAA;
+  }
+  .msr_table01 td {
+	border-bottom: 1px solid #AAAAAA;
+	border-right: 1px solid #AAAAAA;
+	font-size: 13px;
+	padding: 10px;
+	vertical-align: top;
+  }
+  
