@@ -4,21 +4,30 @@
      <meta charset="UTF-8" />
      <meta http-equiv="content-type" content="text/html charset=UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		 <title>ログインテスト</title>
     </head>
     <body>
-        <header class="aaa">ヘッダー</header>
-        <form method="post" id="form">
+        <div class="header">
+            <div class="modoru"> 
+            </div>
+            <div class="home">
+            </div>
+            <div class="logo"></div>
+        </div>
+        <div class="loginbox">
+            <form method="post" id="form">
                 <div">
-                    <div>ログインID</div>
-                    <input type="text" id="id" required>
-                    <div>パスワード</div>
-                    <input type="password" id="pass" required><br>
-                    <input id="btn" type="submit">
+                    <p class="userID">ログインID</p>
+                    <input type="text" id="id" required name="" placeholder="ログインIDを入力" class="loginID">
+                    <p class="userPass">パスワード</p>
+                    <input type="password" id="pass" required name="" placeholder="パスワードを入力" class="loginPASS"><br>
+                    <input id="btn" type="submit" name="" value="ログイン" class="loginBottan">
                 </div>
-        </form>
-		<fotter class="bbb">フッター</fotter>
+            </form>
+        </div>
+		<div class="footer"></div>
         <script src="./js/login.js"></script> 
     </body>
 </html>

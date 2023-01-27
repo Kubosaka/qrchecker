@@ -1,23 +1,173 @@
-.body {
-	color: rgb(208, 136, 49);
-	  background-color: aqua;
-	  font-size: large;
-  }
+body{
+	width: auto;
+	height: auto;
+	background-color: #ffffff;
+}
+
+.header {
+	position: absolute;
+	width: 390px;
+	height: 90px;
+	left: 0px;
+	top: 0px;
+	background-color: #3354A6;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 
+	inset 0px 10px 4px rgba(255, 255, 255, 0.25), 
+	inset 0px -10px 4px rgba(0, 0, 0, 0.25);
+}
+.logo {
+	position: absolute;
+	width: 166px;
+	height: 50px;
+	left: 115px;
+	top: 20px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(.//photo/Q-Join\ ロゴ\ １.png);
+}
+
+.modoru {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 25px;
+	top: 20px;
+	background-size: contain;
+	background-image: url(./photo/戻るボタン.png);
+	
+}
+.home {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	right: 25px;
+	top: 20px;
+	background-size: contain;
+	background-image: url(./photo/ホームボタン.png);
+	
+}
+.footer {
+	position: absolute;
+	width: 390px;
+	height: 90px;
+	left: 0px;
+	bottom: 0px;
+	background-color: #3354A6;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 
+	inset 0px 10px 4px rgba(255, 255, 255, 0.25), 
+	inset 0px -10px 4px rgba(0, 0, 0, 0.25);
+} 
   
-  .senseiLogin {
-	  color: black;
-  }
-  .aaa {
-	  background-color: black;
-  }
-  
-  .bbb {
-	  background-color: black;
-  }
-  
-  
-  /* seito,sensei */
-  .msr_table01 {
+.loginbox{
+	position: absolute;
+	width: 300px;
+	height: 268px;
+	top: 35%;
+	left: 45px;
+	background: rgba(255, 255, 255, 0.4);
+	box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(255, 255, 255, 0.25), inset -4px -4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 30px;
+}
+
+.loginID{
+	position: absolute;
+	left: 8%;
+	top: 25.37%;
+	background: rgba(255, 255, 255, 0.06);
+	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25), inset -2px -2px 4px rgba(255, 255, 255, 0.25);
+	border-radius: 8px;
+}
+.loginPASS{
+	position: absolute;
+	left: 8%;
+	top: 52.24%;
+	background: rgba(255, 255, 255, 0.06);
+	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25), inset -2px -2px 4px rgba(255, 255, 255, 0.25);
+	border-radius: 8px;
+}
+.loginBottan{
+	position: absolute;
+	left: 11.33%;
+	top: 79.1%;
+	height: 32px;
+	width: 232px;
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 32px;
+	text-align: center;
+	color: #FFFFFF;
+	letter-spacing: 0.055em;
+	background: rgba(51, 84, 166, 0.7);
+	box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.25), 2px 2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(255, 255, 255, 0.1), inset -2px -2px 4px rgba(0, 0, 0, 0.17);
+	border-radius: 12px;
+}
+
+.loginbox input[type="text"],[type="password"],[type="submit"]
+{
+border: none;
+font-size: 16px;	
+}
+
+.loginbox input
+{
+	height: 32px;
+	width: 252px;
+}
+.loginbox input[type="submit"]
+{
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.userID
+{
+	position: absolute;
+	left: 8%;
+	right: 64.67%;
+	top: 13%;
+	bottom: 73.13%;
+	white-space: nowrap;
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 16px;
+	color: #000000;
+}
+
+.userPass
+{
+	position: absolute;
+	left: 8%;
+	right: 64.67%;
+	top: 39.5%;
+	bottom: 73.13%;
+	
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 16px;
+	color: #000000;
+}
+
+/* .login{
+	position: absolute;
+	left: 38.67%;
+	right: 39%;
+	top: 82.84%;
+	bottom: 11.19%;
+	width: 67px;
+} */
+
+
+
+
+/* .msr_table01 {
 	border-collapse: collapse;
 	border-left: 1px solid #AAAAAA;
 	border-top: 1px solid #AAAAAA;
@@ -26,7 +176,7 @@
 	width: 100%;
 	  overflow: auto;
 	  white-space: nowrap;
-  }
+  } */
   .msr_table01 th {
 	background-color: #E3E7E9;
 	border-bottom: 1px solid #AAAAAA;
@@ -53,4 +203,20 @@
 	padding: 10px;
 	vertical-align: top;
   }
-  
+
+
+#wrapper{
+	margin: 0px auto 0px auto;
+	width: 320px; height: auto;
+}
+
+#msg{
+	margin: 0px; padding: 10px;
+	background-color: lightgray;
+	text-align: center;
+}
+
+#canvas{
+	width: 100%; height: auto;
+	background-color: silver;
+} 
