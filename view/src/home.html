@@ -6,28 +6,25 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <link rel="stylesheet" type="text/css" href="./index.css">
-		 <title>Node.js HTML表示</title>
+		 <title>ホーム画面</title>
     </head>
 </head>
 <body>
-    <div class="header">
-        <div class="modoru"> 
-        </div>
-        <div class="home">
-        </div>
-        <div class="logo"></div>
-    </div>
-    <div class="namePlate">
-        <div class="line"></div>
-    </div>
-    <!-- <button type="button" class="QRreadBtn">読み取り画面</button> -->
-    <a href="./QRread.html" class="QRreadBtn">
-		<span class="innerHome">読み取り画面</span>
-    </a>
-    <!-- <button type="button" class="attendBtn">出欠確認画面</button> -->
-    <a href="./attend" class="attendBtn">
+  <div class="header">
+    <a href="./login"><div class="backBtn"></div></a>
+    <a href="./home"><div class="homeBtn"></div></a>
+    <div class="logo"></div>
+  </div>  
+  <div class="namePlate"></div>
+  <div class="line"></div>
+  <!-- <button type="button" class="QRreadBtn">読み取り画面</button> -->
+  <a href="./QRread" class="QRreadBtn">
+	  <span class="innerHome">QR読み取り画面</span>
+  </a>
+  <!-- <button type="button" class="attendBtn">出欠確認画面</button> -->
+  <a href="./attend" class="attendBtn">
 		<span class="innerHome">出欠確認画面</span>
-    </a>
-    <div class="footer"></div>
+  </a>
+  <div class="footer"></div>
 </body>
 </html>

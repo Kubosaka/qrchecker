@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" type="text/css" href="./index.css">
+     <script src="./jsQR.js" defer></script>
+     <title>Node.js HTML表示</title>
+    </head>
+    <body>
+        <div class="header">
+            <a href="./home"><div class="backBtn"></div></a>
+            <a href="./home"><div class="homeBtn"></div></a>
+            <div class="logo"></div>
+        </div>
+        <div class="namePlate"></div>
+        <div class="line"></div>
+        <div class="attendPlate">
+            <span class="innerHome">出欠登録</span>
+          </div>
+		<button id="btn" class="start" >
+            <span id="startBtn">start</span>
+        </button>
+		<button id="btn" class="start">
+            <span id="restartBtn">再読み込み</span>
+        </button>
+		<button id="stopBtn">stop</button>
+		<div id='loadingMessage'> startボタンを押すとReaderが起動します</div>
+        <video id='video' hidden></video>
+        <canvas id="canvas" hidden></canvas>
+		    <div id="output" hidden>
+			<div id="outputMessage">No QR code detected.</div>
+			<div hidden>
+            <!-- <b>URL:</b> -->
+          <span id="outputData"></span>
+          
+
+    </body>
+    <script src="./QRreader.js"></script>
+    <script src="./view.js"></script>
+</html>

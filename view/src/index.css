@@ -22,7 +22,7 @@ body {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-image: url(./photo/logo.png); }
-.modoru {
+.backBtn {
 	position: absolute;
 	width: 50px;
 	height: 50px;
@@ -30,7 +30,7 @@ body {
 	top: 20px;
 	background-size: contain;
 	background-image: url(./photo/back.png); }
-.home {
+.homeBtn {
 	position: absolute;
 	width: 50px;
 	height: 50px;
@@ -51,18 +51,23 @@ body {
 a {
 	text-decoration: none; }
 button {
-	border: none;
-}
+	border: none; }
 /* 共通２ */
 .namePlate {
 	position: absolute;
 	width: 390px;
-	height: 53px;
-	left: 0px;
-	top: 92px; }
+	height: 55px;
+	left: 0%;
+	right: 0%;
+	top: 90px;
+	background: rgba(255, 255, 255, 0.4);
+	opacity: 0.9;
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25), inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25);}
 .line {
-	left: 0px;
-	bottom: 0px;
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 143px;
 	border: 3px solid #3354A6;
 }
 /* ログイン画面 */
@@ -153,9 +158,9 @@ button {
 	background: rgba(51, 84, 166, 0.8);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 6px 4px rgba(255, 255, 255, 0.25), inset 0px -6px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 50px;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
 	font-size: 32px;
 	line-height: 244px;
 	text-align: center;
@@ -169,13 +174,31 @@ button {
 	background: rgba(51, 84, 166, 0.8);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 6px 4px rgba(255, 255, 255, 0.25), inset 0px -6px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 50px;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
 	font-size: 32px;
 	line-height: 244px;
 	text-align: center;
 	color: #FFFFFF; }
+/* 出席確認画面 */
+.attendPlate {
+	position: absolute;
+	width: 160px;
+	height: 64px;
+	left: 25px;
+	top: 159px;
+	background: #3354A6;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 10px 4px rgba(255, 255, 255, 0.25), inset 0px -10px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 64px;
+	text-align: center;
+	color: #FFFFFF; }
+
 /* .msr_table01 {
 	border-collapse: collapse;
 	border-left: 1px solid #AAAAAA;
@@ -187,7 +210,7 @@ button {
 	  white-space: nowrap;
   } */
 
-  .msr_table01 th {
+  /* .msr_table01 th {
 	background-color: #E3E7E9;
 	border-bottom: 1px solid #AAAAAA;
 	border-right: 1px solid #AAAAAA;
@@ -212,7 +235,7 @@ button {
 	font-size: 13px;
 	padding: 10px;
 	vertical-align: top;
-  }
+  } */
 
 
 #wrapper{
