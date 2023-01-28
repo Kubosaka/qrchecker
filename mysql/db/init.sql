@@ -6,15 +6,16 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT,
   `name` VARCHAR(255),
   `email` VARCHAR(255),
   `password` VARCHAR(255),
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO users (id, name, email, password) VALUES (1, "Yamada", "yamada@example.com", "aaaaaaa");
-INSERT INTO users (id, name, email, password) VALUES (2, "Yamada2", "yamada2@example.com", "aaaaaaa");
-INSERT INTO users (id, name, email, password) VALUES (3, "Yamada3", "yamada3@example.com", "bbbbbbb");
-INSERT INTO users (id, name, email, password) VALUES (4, "Yamada4", "yamada4@example.com", "bbbbbbb");
-INSERT INTO users (id, name, email, password) VALUES (5, "Yamada5", "yamada5@example.com", "ccccccc");
 
+INSERT INTO users (id, user_id, name, email, password) VALUES (1, 10000, "IyodaAkira", "iyoda@example.com", "aaaaaaa");
+INSERT INTO users (id, user_id, name, email, password) VALUES (2, 20000, "YamadaTarou", "yamada@example.com", "bbbbbbb");
+INSERT INTO users (id, user_id, name, email, password) VALUES (3, 30000, "SuzukiHanako", "suzuki@example.com", "bbbbbbb");
+INSERT INTO users (id, user_id, name, email, password) VALUES (4, 40000, "SatouRin", "satou@example.com", "bbbbbbb");
+INSERT INTO users (id, user_id, name, email, password) VALUES (5, 50000, "HakaseTarou", "hakase@example.com", "ccccccc");
