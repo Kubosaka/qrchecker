@@ -10,7 +10,7 @@
    </head>
     <body>
         <div class="header">
-            <a href="./home"><div class="backBtn"></div></a>
+            <a href="./home" id="home2"><div class="backBtn"></div></a>
             <a href="./home" id="home"><div class="homeBtn"></div></a>
             <div class="logo"></div>
         </div>
@@ -132,5 +132,8 @@
         //homeurlにデータ付与
         const url = document.getElementById("home");
         home.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
+        //homeurlにデータ付与
+        const url2 = document.getElementById("home2");
+        home2.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
     </script>
 </html>

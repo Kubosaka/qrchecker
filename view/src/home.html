@@ -12,7 +12,7 @@
 <body>
   <div class="header">
     <a href="./login"><div class="backBtn"></div></a>
-    <a href="./home"><div class="homeBtn"></div></a>
+    <a href="./home" id="home"><div class="homeBtn"></div></a>
     <div class="logo"></div>
   </div>  
     <div class="namePlate">
@@ -47,7 +47,10 @@
   const url = document.getElementById("QRurl");
   url.href="./QRread?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
   //出席確認ページにデータ送付
-  const url2 = document.getElementById("ATurl");
+  const url2= document.getElementById("ATurl");
   url2.href="./attend?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4];  
+  //ホームurlにデータ付与
+  const url3= document.getElementById("home");
+  url3.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
 </script>
 </html>
