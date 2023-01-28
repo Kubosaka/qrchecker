@@ -4,7 +4,7 @@ const canvas = canvasElement.getContext('2d');
 const loadingMessage = document.getElementById('loadingMessage');
 const outputContainer = document.getElementById('output');
 const outputMessage = document.getElementById('outputMessage');
-const outputData = document.getElementById('outputData');
+// const outputData = document.getElementById('outputData');
 
 
 
@@ -50,15 +50,18 @@ function tick() {
             drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
             drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
             outputMessage.hidden = true;
-            outputData.parentElement.hidden = false;
+            // outputData.parentElement.hidden = false;
             //読み取ったURLをリンクにして表示
-            outputData.innerHTML = `<a href=${code.data}>${code.data}</a>`;
+            // outputData.innerHTML = `<a href=${code.data}>${code.data}</a>`;
             //videoをcanvasに
             video.style.display = 'none';
             video.pause();
+            
+            put();
+
         } else {
             outputMessage.hidden = false;
-            outputData.parentElement.hidden = true;
+            // outputData.parentElement.hidden = true;
         }
     }
     requestAnimationFrame(tick);
@@ -81,3 +84,23 @@ const videoOff = () => {
     video.src = "";
     video.srcObject.getTracks()[0].stop();
 };
+
+async function put() {
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
+    myHeaders.append('Access-Control-Allow-Origin', 'http://localhost:1323');
+
+    const parameter = {
+        method: 'PUT',
+        headers: myHeaders,
+    }
+
+    const result = await fetch('http://localhost:1323/attendances/12989393/Computer/22330191/AkiraIyoda/third', parameter).then((response) => {
+        return response.json();
+    });
+
+    console.log(result);
+    const url='./check';
+    window.location.href = url;
+}
+
