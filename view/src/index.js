@@ -6,7 +6,11 @@ const loginPage = fs.readFileSync('./login.html', 'UTF-8');
 const testPage = fs.readFileSync('./test.html', 'UTF-8');
 const styleCss = fs.readFileSync('./index.css', 'UTF-8');
 const tableCss = fs.readFileSync('./table.css', 'UTF-8');
+const Css = fs.readFileSync('./style.css', 'UTF-8');
 const login = fs.readFileSync('./js/login.js', 'UTF-8');
+const jsQR = fs.readFileSync('./js/jsQR.js', 'UTF-8');
+const QRreadjs = fs.readFileSync('./js/QRreader.js', 'UTF-8');
+const QRviews = fs.readFileSync('./js/view.js', 'UTF-8');
 const home = fs.readFileSync('./home.html', 'UTF-8');
 const test1 = fs.readFileSync('./test1.html', 'UTF-8');
 const attend = fs.readFileSync('./attend.html', 'UTF-8');
@@ -67,17 +71,41 @@ function RouteSetting(req, res) {
     	res.end();
     	break;
     
-      case '/table.css':
-        res.writeHead(200, {'Content-Type': 'text/css'});
-          res.write(tableCss);
-        res.end();
-        break;
+    case '/style.css':
+      res.writeHead(200, {'Content-Type': 'text/css'});
+        res.write(Css);
+      res.end();
+      break;
+
+    case '/table.css':
+      res.writeHead(200, {'Content-Type': 'text/css'});
+        res.write(tableCss);
+      res.end();
+      break;
 
     case '/js/login.js':
       res.writeHead(200, {'Content-Type': 'text/plain'});
       res.write(login);
       res.end();
       break;
+    
+    case '/jsQR.js':
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.write(jsQR);
+      res.end();
+      break;
+
+    case '/QRreader.js':
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.write(QRreadjs);
+      res.end();
+      break;
+    
+    case '/view.js':
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.write(QRviews);
+      res.end();
+      break;  
 
     case '/photo/logo.png':  //　←　アドレスは任意。本当はuuidとか使うのがいいのかもしれませんが。
       res.writeHead(200, {
