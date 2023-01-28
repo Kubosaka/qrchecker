@@ -12,9 +12,10 @@ const jsQR = fs.readFileSync('./js/jsQR.js', 'UTF-8');
 const QRreadjs = fs.readFileSync('./js/QRreader.js', 'UTF-8');
 const QRviews = fs.readFileSync('./js/view.js', 'UTF-8');
 const home = fs.readFileSync('./home.html', 'UTF-8');
-const test1 = fs.readFileSync('./test1.html', 'UTF-8');
+const attendance = fs.readFileSync('./attendance.html', 'UTF-8');
 const attend = fs.readFileSync('./attend.html', 'UTF-8');
 const QRread = fs.readFileSync('./QRread.html', 'UTF-8');
+const check = fs.readFileSync('./check.html', 'UTF-8');
 
 const hostname = '0.0.0.0'; //ローカル なら "127.0.0.1"
 const port = 8000;
@@ -35,9 +36,15 @@ function RouteSetting(req, res) {
       res.end();
       break;
     
-    case '/test1':
+    case '/attendance':
       res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(test1);
+      res.write(attendance);
+      res.end();
+      break;  
+
+    case '/check':
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.write(check);
       res.end();
       break;  
     
