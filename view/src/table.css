@@ -1,7 +1,19 @@
+
+.attendTable {
+    white-space: nowrap;
+    height: auto;
+    width: auto;
+}
 .scroll-box {
+    position: absolute;
+    width: 366px;
+    height: 470px;
+    left: 24px;
+    top: 250px;
     overflow-x: auto;
     padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
+    background-color: black;
 }
 
 .scroll-box table {

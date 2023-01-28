@@ -5,19 +5,24 @@
        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
        <link rel="stylesheet" type="text/css" href="./table.css">
+       <link rel="stylesheet" type="text/css" href="./index.css">
        <title>Node.js HTML表示</title>
    </head>
     <body>
         <div class="header">
-            <div class="modoru"> 
-            </div>
-            <div class="home">
-            </div>
+            <a href="./home.html"><div class="backBtn"></div></a>
+            <a href="./home.html"><div class="homeBtn"></div></a>
             <div class="logo"></div>
         </div>
-        <h1>出席状況</h1>
-        <div class="scroll-box">
-        <table id="at-list-hedder" border="1" align="left">
+        <div class="namePlate">
+            <div class="line"></div>
+        </div>
+        <div class="attendPlate">
+            <span class="innerHome">出席確認</span>
+        </div>
+        <div class="scroll-box" >
+            <!-- class="attendBox" -->
+        <table id="at-list-hedder" border="1" align="left" class="attendTable">
             <tr>
                 <td>講義名</td>
                 <td>第1回</td>
