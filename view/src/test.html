@@ -27,6 +27,7 @@
         })
         .then(function (json) {
             for (var i = 0; i < json.length; i++) {
+                    var user_id = json[i].user_id;
                     var name = json[i].name;
                     var email = json[i].email;
                     var passward = json[i].password;
@@ -34,6 +35,7 @@
                     //表形式でデータを表示する
                     var row = document.getElementById('user-list').insertRow();
                     row.insertCell().textContent = i + 1;
+                    row.insertCell().textContent = user_id;
                     row.insertCell().textContent = name;
                     row.insertCell().textContent = email;
                     row.insertCell().textContent = passward;
