@@ -22,10 +22,10 @@
       <div id="name"></div>
     </div>
     <!-- <div class="line"></div> -->
-  <a href="./QRread" class="QRreadBtn">
+  <a href="./QRread" class="QRreadBtn" id="QRurl">
 	  <span class="innerHome">QR読み取り画面</span>
   </a>
-  <a href="./attend" class="attendBtn">
+  <a href="./attend" class="attendBtn" id="ATurl">
 		<span class="innerHome">出欠確認画面</span>
   </a>
   <div class="footer"></div>
@@ -33,13 +33,21 @@
 <script>
   const query = location.search;
   const value = query.split('=');
+  //divのid取得
   const major=document.getElementById('major');
   const grade=document.getElementById('grade');
   const number=document.getElementById('number');
   const name=document.getElementById('name');
+  //loginした人のデータ表示
   major.innerText = value[1];
   grade.innerText = "第"+value[2]+"学年";
   number.innerText = "学生番号:"+value[3];
   name.innerText = value[4]+"さん";
+  //ログインurlにデータ付与
+  const url = document.getElementById("QRurl");
+  url.href="./QRread?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
+  //出席確認ページにデータ送付
+  const url2 = document.getElementById("ATurl");
+  url2.href="./attend?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4];  
 </script>
 </html>

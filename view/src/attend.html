@@ -11,7 +11,7 @@
     <body>
         <div class="header">
             <a href="./home"><div class="backBtn"></div></a>
-            <a href="./home"><div class="homeBtn"></div></a>
+            <a href="./home" id="home"><div class="homeBtn"></div></a>
             <div class="logo"></div>
         </div>
         <div class="namePlate">
@@ -101,7 +101,7 @@
         function lName(a){
             if(a=="Japanese"){
                  return "日本語";
-            }else if(a=="Engilsh"){
+            }else if(a=="English"){
                 return "英語";
             }else if(a=="Math"){
                 return "数学";
@@ -125,5 +125,12 @@
                 return "保険";
             }
         }
+
+        //url情報保持
+        const query = location.search;
+        const value = query.split('=');
+        //homeurlにデータ付与
+        const url = document.getElementById("home");
+        home.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
     </script>
 </html>
