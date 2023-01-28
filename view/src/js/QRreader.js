@@ -1,10 +1,13 @@
+window.addEventListener('load', () => {
+    startQR();
+});
+
 const video = document.createElement('video');
 const canvasElement = document.getElementById('canvas');
 const canvas = canvasElement.getContext('2d');
 const loadingMessage = document.getElementById('loadingMessage');
 const outputContainer = document.getElementById('output');
 const outputMessage = document.getElementById('outputMessage');
-// const outputData = document.getElementById('outputData');
 
 
 
@@ -50,10 +53,6 @@ function tick() {
             drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
             drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
             outputMessage.hidden = true;
-            // outputData.parentElement.hidden = false;
-            //読み取ったURLをリンクにして表示
-            // outputData.innerHTML = `<a href=${code.data}>${code.data}</a>`;
-            //videoをcanvasに
             video.style.display = 'none';
             video.pause();
             
@@ -61,7 +60,6 @@ function tick() {
 
         } else {
             outputMessage.hidden = false;
-            // outputData.parentElement.hidden = true;
         }
     }
     requestAnimationFrame(tick);
