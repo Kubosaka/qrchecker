@@ -20,7 +20,7 @@ function loginFunc() {
         var password = json[i].password;
 
         if(name1==name.value&&password==pass.value){
-            window.location.href = './home.html';
+            window.location.href = './home';
             return;
         }
       }
