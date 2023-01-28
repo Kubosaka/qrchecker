@@ -18,24 +18,24 @@
         <div class="line"></div>
         <div class="attendPlate">
             <span class="innerHome">出欠登録</span>
+        </div>
+        <div class="reader">
+            <video id="js-video" class="reader-video" autoplay playsinline></video>
+        </div>
+        <div style="display:none">
+            <canvas id="js-canvas"></canvas>
+        </div>
+        <div id="js-modal" class="modal-overlay">
+            <div class="modal">
+              <div class="modal-cnt">
+                <span class="modal-title">読み取り結果</span>
+                <span id="js-result" class="modal-result"></span>
+              </div>
+              <a href="" id="js-link" class="modal-btn" target="_blank">開く</a>
+              <button type="button" id="js-modal-close" class="modal-btn">閉じる</button>
+            </div>
           </div>
-		<button id="btn" class="start" >
-            <span id="startBtn">start</span>
-        </button>
-		<button id="btn" class="start">
-            <span id="restartBtn">再読み込み</span>
-        </button>
-		<button id="stopBtn">stop</button>
-		<div id='loadingMessage'> startボタンを押すとReaderが起動します</div>
-        <video id='video' hidden></video>
-        <canvas id="canvas" hidden></canvas>
-		    <div id="output" hidden>
-			<div id="outputMessage">No QR code detected.</div>
-			<div hidden>
-            <!-- <b>URL:</b> -->
-          <span id="outputData"></span>
-          
-
+		
     </body>
     <script src="./QRreader.js"></script>
     <script src="./view.js"></script>

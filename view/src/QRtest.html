@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>出欠登録サービス</title>
+		<link rel="stylesheet" href="./index.css"/>
+		<script src="./js/jsQR.js" defer></script>
+	</head>
+	<body>
+        <div class="header">
+            <a href="./home"><div class="backBtn"></div></a>
+            <a href="./home"><div class="homeBtn"></div></a>
+            <div class="logo"></div>
+        </div>
+        <div class="namePlate"></div>
+        <div class="line"></div>
+		<h1>出欠登録</h1>
+		<p>URL情報を取得して表示します</p>
+		<button id="btn" class="start">
+            <span id="startBtn">start</span>
+        </button>
+		<button id="btn" class="start">
+            <span id="restartBtn">再読み込み</span>
+        </button>
+		<button id="stopBtn">stop</button>
+		<div id='loadingMessage'> startボタンを押すとReaderが起動します</div>
+        <video id='video' hidden></video>
+        <canvas id="canvas" hidden></canvas>
+		<div id="output" hidden>
+			<div id="outputMessage">
+                No QR code detected.
+            </div>
+			<div hidden>
+                <b>URL:</b>
+                <span id="outputData"></span>
+            </div>
+        </div>
+        <script src="../js/QRreader.js"></script>
+        <script src="./js/view.js"></script>
+    </body>
+</html>
