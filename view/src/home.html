@@ -15,16 +15,31 @@
     <a href="./home"><div class="homeBtn"></div></a>
     <div class="logo"></div>
   </div>  
-  <div class="namePlate"></div>
-  <div class="line"></div>
-  <!-- <button type="button" class="QRreadBtn">読み取り画面</button> -->
+    <div class="namePlate">
+      <div id="major"></div>
+      <div id="grade"></div>
+      <div id="number"></div>
+      <div id="name"></div>
+    </div>
+    <!-- <div class="line"></div> -->
   <a href="./QRread" class="QRreadBtn">
 	  <span class="innerHome">QR読み取り画面</span>
   </a>
-  <!-- <button type="button" class="attendBtn">出欠確認画面</button> -->
   <a href="./attend" class="attendBtn">
 		<span class="innerHome">出欠確認画面</span>
   </a>
   <div class="footer"></div>
 </body>
+<script>
+  const query = location.search;
+  const value = query.split('=');
+  const major=document.getElementById('major');
+  const grade=document.getElementById('grade');
+  const number=document.getElementById('number');
+  const name=document.getElementById('name');
+  major.innerText = "学科";
+  grade.innerText = "第3学年";
+  number.innerText = "学生番号:"+value[2];
+  name.innerText = value[1]+"さん";
+</script>
 </html>
