@@ -15,13 +15,15 @@ function loginFunc() {
     })
     .then(function (json) {
       for (var i = 0; i < json.length; i++) {
-        var uid1 = json[i].user_id;
+        var major = json[i].major;
+        var grade= json[i].grade;
+        var user_id= json[i].user_id;
         var name = json[i].name;
         var email = json[i].email;
         var password = json[i].password;
 
         if(email==uid.value&&password==pass.value){
-            const url='./home?name='+name+'='+uid1;
+            const url='./home?name='+major+'='+grade+'='+user_id+'='+name;
             window.location.href = url;
             return;
         }
