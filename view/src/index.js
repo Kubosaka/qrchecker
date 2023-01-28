@@ -12,7 +12,6 @@ const jsQR = fs.readFileSync('./js/jsQR.js', 'UTF-8');
 const QRreadjs = fs.readFileSync('./js/QRreader.js', 'UTF-8');
 const QRviews = fs.readFileSync('./js/view.js', 'UTF-8');
 const home = fs.readFileSync('./home.html', 'UTF-8');
-const attendance = fs.readFileSync('./attendance.html', 'UTF-8');
 const attend = fs.readFileSync('./attend.html', 'UTF-8');
 const QRread = fs.readFileSync('./QRread.html', 'UTF-8');
 const check = fs.readFileSync('./check.html', 'UTF-8');
@@ -34,13 +33,7 @@ function RouteSetting(req, res) {
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(loginPage);
       res.end();
-      break;
-    
-    case '/attendance':
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(attendance);
-      res.end();
-      break;  
+      break; 
 
     case '/check':
       res.writeHead(200, {'Content-Type': 'text/html'});
