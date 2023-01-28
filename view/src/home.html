@@ -15,16 +15,22 @@
     <a href="./home"><div class="homeBtn"></div></a>
     <div class="logo"></div>
   </div>  
-  <div class="namePlate"></div>
-  <div class="line"></div>
-  <!-- <button type="button" class="QRreadBtn">読み取り画面</button> -->
+    <div class="namePlate" id="name"></div>
+    <!-- <div class="line"></div> -->
   <a href="./QRread" class="QRreadBtn">
 	  <span class="innerHome">QR読み取り画面</span>
   </a>
-  <!-- <button type="button" class="attendBtn">出欠確認画面</button> -->
   <a href="./attend" class="attendBtn">
 		<span class="innerHome">出欠確認画面</span>
   </a>
   <div class="footer"></div>
 </body>
+<script>
+  const query = location.search;
+  const value = query.split('=');
+  const name=document.getElementById('name');
+  name.innerText = value[1]+"さん";
+  console.log(value[1]);
+  console.log(value[2]);
+</script>
 </html>

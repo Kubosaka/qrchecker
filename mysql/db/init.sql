@@ -19,3 +19,4 @@ INSERT INTO users (id, user_id, name, email, password) VALUES (2, 20000, "Yamada
 INSERT INTO users (id, user_id, name, email, password) VALUES (3, 30000, "SuzukiHanako", "suzuki@example.com", "bbbbbbb");
 INSERT INTO users (id, user_id, name, email, password) VALUES (4, 40000, "SatouRin", "satou@example.com", "bbbbbbb");
 INSERT INTO users (id, user_id, name, email, password) VALUES (5, 50000, "HakaseTarou", "hakase@example.com", "ccccccc");
+INSERT INTO users (id, user_id, name, email, password) VALUES (6, 60000, "KubosakaShungo", "kubosaka@example.com", "Kubosaka");
