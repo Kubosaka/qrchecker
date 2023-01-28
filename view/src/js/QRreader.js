@@ -57,7 +57,7 @@ function tick() {
             video.style.display = 'none';
             video.pause();
             
-            put();
+            put(code.data);
 
         } else {
             outputMessage.hidden = false;
@@ -85,7 +85,14 @@ const videoOff = () => {
     video.srcObject.getTracks()[0].stop();
 };
 
-async function put() {
+async function put(a) {
+    const query = location.search;
+    const value = query.split('=');
+    
+    const value2 = a.split('=');
+    const rurl = 'http://localhost:1323/attendances/'+value2[0]+'/'+value2[1]+'/'+value[3]+'/'+value[4]+'/'+value2[2];
+    console.log(rurl);
+
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
     myHeaders.append('Access-Control-Allow-Origin', 'http://localhost:1323');
@@ -95,12 +102,12 @@ async function put() {
         headers: myHeaders,
     }
 
-    const result = await fetch('http://localhost:1323/attendances/12989393/Computer/22330191/AkiraIyoda/third', parameter).then((response) => {
+    const result = await fetch(rurl, parameter).then((response) => {
         return response.json();
     });
 
     console.log(result);
-    const url='./check';
+    const url='./check?name='+value[1]+'='+value[2]+'='+value[3]+'='+value[4];
     window.location.href = url;
 }
 
