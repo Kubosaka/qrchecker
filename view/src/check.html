@@ -35,9 +35,9 @@
         const value = query.split('=');
         const kname = document.getElementById("kname");
         const times = document.getElementById("times");
-        kname.innerText = value[5];
-        times.innerText = value[6];
-        
+        kname.innerText = lName(value[5]);
+        times.innerText = ltimes(value[6]);
+
         //homeurlにデータ付与
         const home = document.getElementById("home");
         home.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
@@ -54,5 +54,71 @@
 		    grade.innerText = "第"+value[2]+"学年";
 		    number.innerText = "学生番号:"+value[3];
 		    name.innerText = value[4];
+
+       function lName(a){
+            if(a=="Japanese"){
+                 return "日本語";
+            }else if(a=="English"||a=="Engilsh"){
+                return "英語";
+            }else if(a=="Math"){
+                return "数学";
+            }else if((a=="Social_studies")||(a=="Soclal_studies")){
+                return "社会";
+            }else if(a=="Politics_and_economics"){
+                return "政治・経済";
+            }else if(a=="Science"){
+                return "科学";
+            }else if(a=="Art"){
+                return "美術";
+            }else if(a=="Music"){
+                return "音楽";
+            }else if(a=="Physical_education"){
+                return "物理学";
+            }else if(a=="Special_activities"){
+                return "特別活動";
+            }else if(a=="Period_for_integrated_study"){
+                return "総合学習";
+            }else if(a=="Health"){
+                return "保健";
+            }else{
+                return a;
+            }
+        }
+
+        function ltimes(a){
+            if(a=="first"){
+                 return "第1回";
+            }else if(a=="second"){
+                return "第2回";
+            }else if(a=="third"){
+                return "第3回";
+            }else if(a=="fourth"){
+                return "第4回";
+            }else if(a=="fifth"){
+                return "第5回";
+            }else if(a=="sixth"){
+                return "第6回";
+            }else if(a=="seventh"){
+                return "第7回";
+            }else if(a=="eighth"){
+                return "第8回";
+            }else if(a=="ninth"){
+                return "第9回";
+            }else if(a=="tenth"){
+                return "第10回";
+            }else if(a=="eleventh"){
+                return "第11回";
+            }else if(a=="twelfth"){
+                return "第12回";
+            }else if(a=="thirteenth"){
+                return "第13回";
+            }else if(a=="fourteenth"){
+                return "第14回";
+            }else if(a=="fifteenth"){
+                return "第15回";
+            }else{
+                return a;
+            }
+        }
     </script>
 </html>
