@@ -108,7 +108,7 @@
                 return "英語";
             }else if(a=="Math"){
                 return "数学";
-            }else if(a=="Social_studies"){
+            }else if((a=="Social_studies")||(a=="Soclal_studies")){
                 return "社会";
             }else if(a=="Politics_and_economics"){
                 return "政治・経済";
@@ -126,6 +126,8 @@
                 return "総合学習";
             }else if(a=="Health"){
                 return "保険";
+            }else{
+                return a;
             }
         }
 
