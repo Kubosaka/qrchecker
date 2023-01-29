@@ -38,10 +38,10 @@
     const number=document.getElementById('number');
     const name=document.getElementById('name');
     //loginした人のデータ表示
-    major.innerText = value[1];
+    major.innerText = Cmajor(value[1]);
     grade.innerText = "第"+value[2]+"学年";
     number.innerText = "学生番号:"+value[3];
-    name.innerText = value[4];
+    name.innerText = Cname(value[4]);
     //ログインurlにデータ付与
     const url = document.getElementById("QRurl");
     url.href="./QRread?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
@@ -51,5 +51,29 @@
     //ホームurlにデータ付与
     const url3= document.getElementById("home");
     url3.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
+
+    function Cname(a){
+      if(a=="IyodaAkira"){
+        return "伊豫田彬";
+      }else if(a=="YamadaTarou"){
+        return "山田太郎";
+      }else if(a=="SuzukiHanako"){
+        return "鈴木花子";
+      }else if(a=="SatouRin"){
+        return "佐藤凛";
+      }else if(a=="HakaseTarou"){
+        return "博士太郎";
+      }else{
+        return a;
+      }
+    }
+
+    function Cmajor(a){
+      if(a=="Management_Information_Systems"){
+        return "経営情報システム専攻";
+      }else{
+        return a;
+      }
+    }
   </script>
 </html>
