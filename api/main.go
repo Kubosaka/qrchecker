@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/Kubosaka/qrchecker/api/drivers"
 
@@ -81,7 +82,7 @@ func getLectures(c echo.Context) error {
 func getAttendances(c echo.Context) error {
 	attendances := []Attendances{}
 	drivers.DB.Find(&attendances)
-	fmt.Println(attendances)
+	//fmt.Println(attendances)
 	return c.JSON(http.StatusOK, attendances)
 }
 
@@ -114,43 +115,6 @@ func updateAttendance(c echo.Context) error {
 			attendance.Fifteenth = a.Fifteenth
 		}
 	}
-
-	// count, _ := strconv.Atoi(c.Param("count"))
-
-	// for i := 0; i < count; i++ {
-	// 	switch i {
-	// 	case 1:
-	// 		attendance.First = true
-	// 	case 2:
-	// 		attendance.Second = true
-	// 	case 3:
-	// 		attendance.Third = true
-	// 	case 4:
-	// 		attendance.Fourth = true
-	// 	case 5:
-	// 		attendance.Fifth = true
-	// 	case 6:
-	// 		attendance.Sixth = true
-	// 	case 7:
-	// 		attendance.Seventh = true
-	// 	case 8:
-	// 		attendance.Eighth = true
-	// 	case 9:
-	// 		attendance.Ninth = true
-	// 	case 10:
-	// 		attendance.Tenth = true
-	// 	case 11:
-	// 		attendance.Eleventh = true
-	// 	case 12:
-	// 		attendance.Twelfth = true
-	// 	case 13:
-	// 		attendance.Thirteenth = true
-	// 	case 14:
-	// 		attendance.Fourteenth = true
-	// 	case 15:
-	// 		attendance.Fifteenth = true
-	// 	}
-	// }
 
 	switch c.Param("count") {
 	case "first":
@@ -190,6 +154,30 @@ func updateAttendance(c echo.Context) error {
 	return c.JSON(http.StatusCreated, attendance)
 }
 
+func getAttendance(c echo.Context) error {
+	//attendance := Attendances{}
+	attendances := []Attendances{}
+	returnAttendance := []Attendances{}
+
+	drivers.DB.Find(&attendances)
+	//fmt.Println(attendances)
+
+	// if err := c.Bind(&attendance); err != nil {
+	// 	return err
+	// }
+	// fmt.Println(attendance)
+	check_user_id, _ := strconv.Atoi(c.Param("user_id"))
+	fmt.Println(check_user_id)
+	for _, a := range attendances {
+		if a.User_Number == check_user_id {
+			returnAttendance = append(returnAttendance, a)
+		}
+	}
+
+	//fmt.Println(returnAttendance)
+	return c.JSON(http.StatusCreated, returnAttendance)
+}
+
 func main() {
 	//echoのインスタンス
 	e := echo.New()
@@ -212,6 +200,7 @@ func main() {
 	e.GET("/users/:id", getUser)
 	e.GET("/lectures", getLectures)
 	e.GET("/attendances", getAttendances)
+	e.GET("/attendances/:user_id", getAttendance)
 	e.PUT("/attendances/:lecture_id/:lecture_name/:user_id/:user_name/:count", updateAttendance)
 
 	e.Logger.Fatal(e.Start(":1323"))
