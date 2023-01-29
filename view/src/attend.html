@@ -50,8 +50,11 @@
     </body>
     
     <script>
+        const query = location.search;
+        const value = query.split('=');
         //fetch() は Promise を返す（返り値を変数に代入する場合）
-        const promise = fetch('http://localhost:1323/attendances');
+        const rurl='http://localhost:1323/attendances/'+value[3];
+        const promise = fetch(rurl);
         
         //fetch() のレスポンス（リクエストの結果）を then() メソッドで処理
         promise.then((response) => {
@@ -109,7 +112,7 @@
                 return "英語";
             }else if(a=="Math"){
                 return "数学";
-            }else if(a=="Social_studies"){
+            }else if((a=="Social_studies")||(a=="Soclal_studies")){
                 return "社会";
             }else if(a=="Politics_and_economics"){
                 return "政治・経済";
@@ -127,12 +130,11 @@
                 return "総合学習";
             }else if(a=="Health"){
                 return "保険";
+            }else{
+                return a;
             }
         }
 
-        //url情報保持
-        const query = location.search;
-        const value = query.split('=');
         //homeurlにデータ付与
         const home = document.getElementById("home");
         home.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
