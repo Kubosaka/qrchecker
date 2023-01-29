@@ -21,7 +21,11 @@
             <div id="name" class="name"></div>
           </div>
           <div class="check" >
-            <span class="innerHome">出席確認しました</span>
+            <!-- <span class="innerHome" id="ATcheck">
+            </span> -->
+            <div id="kname"></div>
+            <div id="times"></div>
+            <div>出席登録完了</div>
           </div>
         <div class="footer"></div>
     </body>
@@ -29,21 +33,26 @@
         //url情報保持
         const query = location.search;
         const value = query.split('=');
+        const kname = document.getElementById("kname");
+        const times = document.getElementById("times");
+        kname.innerText = value[5];
+        times.innerText = value[6];
+        
         //homeurlにデータ付与
         const home = document.getElementById("home");
         home.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
         //homeurlにデータ付与
         const home2 = document.getElementById("back");
         home2.href="./QRread?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
-	  //divのid取得
-		const major=document.getElementById('major');
-		const grade=document.getElementById('grade');
-		const number=document.getElementById('number');
-		const name=document.getElementById('name');
-	  //loginした人のデータ表示
-		major.innerText = value[1];
-		grade.innerText = "第"+value[2]+"学年";
-		number.innerText = "学生番号:"+value[3];
-		name.innerText = value[4];
+	      //divのid取得
+		    const major=document.getElementById('major');
+		    const grade=document.getElementById('grade');
+		    const number=document.getElementById('number');
+		    const name=document.getElementById('name');
+	      //loginした人のデータ表示
+		    major.innerText = value[1];
+		    grade.innerText = "第"+value[2]+"学年";
+		    number.innerText = "学生番号:"+value[3];
+		    name.innerText = value[4];
     </script>
 </html>

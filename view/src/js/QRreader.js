@@ -105,7 +105,7 @@ async function put(a) {
     });
 
     console.log(result);
-    const url='./check?name='+value[1]+'='+value[2]+'='+value[3]+'='+value[4];
+    const url='./check?name='+value[1]+'='+value[2]+'='+value[3]+'='+value[4]+'='+value2[1]+'='+value2[2];
     window.location.href = url;
 }
 
