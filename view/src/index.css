@@ -2,7 +2,12 @@
 body {
 	width: auto;
 	height: auto;
-	background-color: #ffffff; }
+	background-color: #ffffff;
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 16px;
+}
 .header {
 	position: absolute;
 	width: 390px;
@@ -62,15 +67,35 @@ button {
 	top: 90px;
 	background: rgba(255, 255, 255, 0.4);
 	opacity: 0.9;
-	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25), inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25);}
-.line {
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25), inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+	border-bottom: 3px solid #3354a6d7;}
+
+.major {
 	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 143px;
-	border: 3px solid #3354A6;
+	white-space: nowrap;
+	left: 0px;
+	top: 0px;
 }
-/* ログイン画面 */
+.grade{
+	position: absolute;
+	white-space: nowrap;
+	left: 0px;
+	top: 16px;
+}
+.number {
+	position: absolute;
+	white-space: nowrap;
+	left: 0px;
+	top: 32px;
+}
+.name {
+	position: absolute;
+	white-space: nowrap;
+	left: 80px;
+	top: 16px;
+}
+
+/* login.html */
 .loginbox {
 	position: absolute;
 	width: 300px;
@@ -100,10 +125,6 @@ button {
 	top: 79.1%;
 	height: 32px;
 	width: 232px;
-	font-family: 'Josefin Sans';
-	font-style: italic;
-	font-weight: 700;
-	font-size: 16px;
 	line-height: 32px;
 	text-align: center;
 	color: #FFFFFF;
@@ -148,7 +169,7 @@ button {
 	line-height: 16px;
 	color: #000000; }
 
-/* ホーム画面 */
+/* home.html*/
 .QRreadBtn {
 	position: absolute;
 	width: 342px;
@@ -181,7 +202,10 @@ button {
 	line-height: 244px;
 	text-align: center;
 	color: #FFFFFF; }
-/* 出席確認画面 */
+
+	/*ネームプレート*/
+	
+/* attend.html */
 .attendPlate {
 	position: absolute;
 	width: 160px;
@@ -199,57 +223,22 @@ button {
 	text-align: center;
 	color: #FFFFFF; }
 
-/* .msr_table01 {
-	border-collapse: collapse;
-	border-left: 1px solid #AAAAAA;
-	border-top: 1px solid #AAAAAA;
-	line-height: 1.5;
-	text-align: left;
-	width: 100%;
-	  overflow: auto;
-	  white-space: nowrap;
-  } */
-
-  /* .msr_table01 th {
-	background-color: #E3E7E9;
-	border-bottom: 1px solid #AAAAAA;
-	border-right: 1px solid #AAAAAA;
-	box-sizing: border-box;
-	font-size: 14px;
-	font-weight: normal;
-	padding: 10px;
+/*check.html*/
+.check {
+	position: absolute;
+	width: 342px;
+	height: 244px;
+	left: 24px;
+	top: 30%;
+	background: rgba(51, 84, 166, 0.8);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 6px 4px rgba(255, 255, 255, 0.25), inset 0px -6px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 50px;
+	font-family: 'Josefin Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 244px;
 	text-align: center;
-	vertical-align: middle;
-  }
-  .msr_table01 thead th {
-	background-color: #ABB7BC;
-	border-right: 1px solid #FFFFFF;
 	color: #FFFFFF;
-  }
-  .msr_table01 thead th:last-child {
-	border-right: 1px solid #AAAAAA;
-  }
-  .msr_table01 td {
-	border-bottom: 1px solid #AAAAAA;
-	border-right: 1px solid #AAAAAA;
-	font-size: 13px;
-	padding: 10px;
-	vertical-align: top;
-  } */
-
-
-#wrapper{
-	margin: 0px auto 0px auto;
-	width: 320px; height: auto;
 }
 
-#msg{
-	margin: 0px; padding: 10px;
-	background-color: lightgray;
-	text-align: center;
-}
-
-#canvas{
-	width: 100%; height: auto;
-	background-color: silver;
-} 

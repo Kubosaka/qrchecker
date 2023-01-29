@@ -10,13 +10,16 @@
    </head>
     <body>
         <div class="header">
-            <a href="./home" id="home2"><div class="backBtn"></div></a>
-            <a href="./home" id="home"><div class="homeBtn"></div></a>
-            <div class="logo"></div>
-        </div>
-        <div class="namePlate">
-            <div class="line"></div>
-        </div>
+			<a href="./home" id="back"><div class="backBtn"></div></a>
+			<a href="./home" id="home"><div class="homeBtn"></div></a>
+			<div class="logo"></div>
+		</div>  
+		<div class="namePlate">
+			<div id="major" class="major"></div>
+			<div id="grade" class="grade"></div>
+			<div id="number" class="number"></div>
+			<div id="name" class="name"></div>
+		</div>
         <div class="attendPlate">
             <span class="innerHome">出席確認</span>
         </div>
@@ -45,6 +48,7 @@
         </div>
         <div class="footer"></div>
     </body>
+    
     <script>
         //fetch() は Promise を返す（返り値を変数に代入する場合）
         const promise = fetch('http://localhost:1323/attendances');
@@ -130,10 +134,20 @@
         const query = location.search;
         const value = query.split('=');
         //homeurlにデータ付与
-        const url = document.getElementById("home");
+        const home = document.getElementById("home");
         home.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
         //homeurlにデータ付与
-        const url2 = document.getElementById("home2");
+        const home2 = document.getElementById("back");
         home2.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
-    </script>
+        //divのid取得
+		const major=document.getElementById('major');
+		const grade=document.getElementById('grade');
+		const number=document.getElementById('number');
+		const name=document.getElementById('name');
+	  //loginした人のデータ表示
+		major.innerText = value[1];
+		grade.innerText = "第"+value[2]+"学年";
+		number.innerText = "学生番号:"+value[3];
+		name.innerText = value[4];
+	</script>
 </html>
