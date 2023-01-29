@@ -1,60 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-     <meta charset="UTF-8" />
-     <meta http-equiv="content-type" content="text/html charset=UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" type="text/css" href="./index.css">
-		 <title>ホーム画面</title>
-    </head>
-</head>
-<body>
-  <div class="header">
-    <a href="./login"><div class="backBtn"></div></a>
-    <a href="./home" id="home"><div class="homeBtn"></div></a>
-    <div class="logo"></div>
-  </div>  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./index.css">
+		<title>ホーム画面</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href="./login"><div class="backBtn"></div></a>
+      <a href="./home" id="home"><div class="homeBtn"></div></a>
+      <div class="logo"></div>
+    </div>  
     <div class="namePlate">
-      <div class="inNamePlate">
-        <div id="major" class="innerNamePlate"></div>
-        <div id="grade" class="innerNamePlate"></div>
-      </div>
-      <div class="inNamePlate">
-        <div id="number" class="innerNamePlate"></div>
-        <div id="name" class="innerNamePlate"></div>
-      </div>
+      <div id="major" class="major"></div>
+      <div id="grade" class="grade"></div>
+      <div id="number" class="number"></div>
+      <div id="name" class="name"></div>
     </div>
-    <!-- <div class="line"></div> -->
-  <a href="./QRread" class="QRreadBtn" id="QRurl">
-	  <span class="innerHome">QR読み取り画面</span>
-  </a>
-  <a href="./attend" class="attendBtn" id="ATurl">
-		<span class="innerHome">出欠確認画面</span>
-  </a>
-  <div class="footer"></div>
-</body>
-<script>
-  const query = location.search;
-  const value = query.split('=');
-  //divのid取得
-  const major=document.getElementById('major');
-  const grade=document.getElementById('grade');
-  const number=document.getElementById('number');
-  const name=document.getElementById('name');
-  //loginした人のデータ表示
-  major.innerText = value[1];
-  grade.innerText = "第"+value[2]+"学年";
-  number.innerText = "学生番号:"+value[3];
-  name.innerText = value[4]+"さん";
-  //ログインurlにデータ付与
-  const url = document.getElementById("QRurl");
-  url.href="./QRread?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
-  //出席確認ページにデータ送付
-  const url2= document.getElementById("ATurl");
-  url2.href="./attend?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4];  
-  //ホームurlにデータ付与
-  const url3= document.getElementById("home");
-  url3.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
-</script>
+    <a href="./QRread" class="QRreadBtn" id="QRurl">
+	    <span class="innerHome">QR読み取り画面</span>
+    </a>
+    <a href="./attend" class="attendBtn" id="ATurl">
+		  <span class="innerHome">出欠確認画面</span>
+    </a>
+    <div class="footer"></div>
+  </body>
+  <script>
+    //url情報保持
+    const query = location.search;
+    const value = query.split('=');
+    //divのid取得
+    const major=document.getElementById('major');
+    const grade=document.getElementById('grade');
+    const number=document.getElementById('number');
+    const name=document.getElementById('name');
+    //loginした人のデータ表示
+    major.innerText = value[1];
+    grade.innerText = "第"+value[2]+"学年";
+    number.innerText = "学生番号:"+value[3];
+    name.innerText = value[4];
+    //ログインurlにデータ付与
+    const url = document.getElementById("QRurl");
+    url.href="./QRread?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
+    //出席確認ページにデータ送付
+    const url2= document.getElementById("ATurl");
+    url2.href="./attend?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4];  
+    //ホームurlにデータ付与
+    const url3= document.getElementById("home");
+    url3.href="./home?name="+value[1]+"="+value[2]+"="+value[3]+"="+value[4]; 
+  </script>
 </html>
